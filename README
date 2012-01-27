@@ -17,6 +17,21 @@ Installation
 1. `git submodule add git@github.com:maxnag/Kohana-log.git  modules/Kohana-log`
 2. Enable line about module in your bootstrap file
 3. Read more about module on http://blog.nagaychenko.com/2012/01/27/логирование-работы-сайта-на-kohana/
+4. If need to storage lo into DB you need to run script
+
+CREATE TABLE IF NOT EXISTS `logs` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `level` enum('EMERGENCY','CRITICAL','ERROR','WARNING','NOTICE','INFO','DEBUG') COLLATE utf8_unicode_ci DEFAULT 'INFO',
+  `message` varchar(5000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `client` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `uri` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `referer` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `agent` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cookie` varchar(2000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Логирование ошибок сайта' AUTO_INCREMENT=1 ;
+
 
 Usage
 -----

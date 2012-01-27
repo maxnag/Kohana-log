@@ -1,0 +1,24 @@
+Log for Kohana 3.*
+===================
+
+Overview
+--------
+
+For details information please see http://blog.nagaychenko.com/2012/01/27/логирование-работы-сайта-на-kohana/
+
+Requirements
+------------
+
+Kohanaframework > 3.0
+
+Installation
+------------
+
+1. `git submodule add git@github.com:maxnag/Kohana-log.git  modules/Kohana-log`
+2. Enable line about module in your bootstrap file
+3. Read more about module on http://blog.nagaychenko.com/2012/01/27/логирование-работы-сайта-на-kohana/
+
+Usage
+-----
+
+http://<your_domain>/log/dd.mm.yyyy (example - http://blog.nagaychenko.com/kohana/log/27.01.2012)

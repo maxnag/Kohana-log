@@ -20,6 +20,7 @@ class Log_Writer_Database extends Log_Writer {
 		foreach ($messages as $message)
 		{
 			$log->values($this->_format($message))->create();
+                                                     $log->clear();
 		}
 	}
 

@@ -6,16 +6,16 @@ class Log_Writer_Database extends Log_Writer {
 	{
 		register_shutdown_function(array($this, 'update_session'));
 	}
-	
+
 	/**
 	 * Запись лог в БД
-	 * 
+	 *
 	 * @see Kohana_Log_Writer::write()
 	 * @return void
 	 */
 	public function write(array $messages)
 	{
-		$log = new Model_Logs;
+		$log = new Model_Log;
 
 		foreach ($messages as $message)
 		{
@@ -25,7 +25,7 @@ class Log_Writer_Database extends Log_Writer {
 
 	/**
 	 * Форматирование ошибок для записи в БД
-	 * 
+	 *
 	 * @param array $message
 	 * @return array
 	 */
@@ -46,8 +46,8 @@ class Log_Writer_Database extends Log_Writer {
 
 	public function update_session()
 	{
-		Session::instance()->set('log_writer', __CLASS__);	
-	}	
-	
+		Session::instance()->set('log_writer', __CLASS__);
+	}
+
 } // End Log_Writer_Database
 
